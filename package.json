@@ -1,0 +1,19 @@
+{
+  "name": "sparqlblocks-server",
+  "version": "0.1.0",
+  "description": "Server-side companion of client library SparqlBlocks",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguel76/SparqlBlocks-Server.git"
+  },
+  "author": "Miguel Ceriani <miguel.ceriani@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miguel76/SparqlBlocks-Server/issues"
+  },
+  "homepage": "https://github.com/miguel76/SparqlBlocks-Server#readme"
+}
