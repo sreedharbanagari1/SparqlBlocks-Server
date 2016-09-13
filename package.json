@@ -2,9 +2,10 @@
   "name": "sparqlblocks-server",
   "version": "0.1.0",
   "description": "Server-side companion of client library SparqlBlocks",
-  "main": "src/index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",

@@ -9,6 +9,4 @@ app.use(
     '/demo',
     express.static(path.join(__dirname, 'node_modules', 'sparqlblocks', 'dist')));
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+module.exports = app;
