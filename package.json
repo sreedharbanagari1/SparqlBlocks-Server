@@ -21,7 +21,10 @@
   "dependencies": {
     "bunyan": "^1.8.1",
     "express": "^4.14.0",
+    "loggly": "^1.1.0",
     "socket.io": "^1.4.8",
-    "sparqlblocks": "github:miguel76/SparqlBlocks"
+    "sparqlblocks": "github:miguel76/SparqlBlocks",
+    "winston": "^2.2.0",
+    "winston-loggly-bulk": "^1.3.3"
   }
 }
