@@ -20,6 +20,7 @@
   "homepage": "https://github.com/miguel76/SparqlBlocks-Server#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "socket.io": "^1.4.8",
     "sparqlblocks": "github:miguel76/SparqlBlocks"
   }
 }
