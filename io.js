@@ -11,7 +11,6 @@ if (process.env.LOGGLY_SUBDOMAIN && process.env.LOGGLY_TOKEN) {
   });
 }
 
-// var log = bunyan.createLogger({name: "client-events"});
 module.exports = function (httpServer) {
   var io = socket(httpServer);
   io.on('connection', function(socket) {
