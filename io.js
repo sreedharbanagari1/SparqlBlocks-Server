@@ -15,11 +15,13 @@ module.exports = function (httpServer) {
   var io = socket(httpServer);
   io.on('connection', function(socket) {
     var traceEvent = function(event) {
-      event.sessionId = socket.id;
+      event.connectionId = socket.id;
       winston.log('info', 'client-event', {event: event});
     };
     traceEvent({type: 'connection'});
-    ['load-snapshot', 'save-snapshot', 'create', 'delete', 'move', 'ui'].map(function(eventType) {
+    [ 'load-snapshot', 'save-snapshot',
+      'new-workspace', 'new-client', 'new-session',
+      'create', 'delete', 'move', 'ui'].map(function(eventType) {
       socket.on(eventType, traceEvent);
     });
     socket.on('disconnect', function(){
