@@ -2,12 +2,14 @@ const socket = require('socket.io');
 const winston = require('winston');
 require('winston-loggly-bulk');
 
-winston.add(winston.transports.Loggly, {
-  token: "ee08bcff-7d69-4b60-8c88-edc872f26116",
-  subdomain: "sparqlblocks",
-  tags: ["Winston-NodeJS"],
-  json:true
-});
+if (process.env.LOGGLY_SUBDOMAIN && process.env.LOGGLY_TOKEN) {
+  winston.add(winston.transports.Loggly, {
+    token: process.env.LOGGLY_TOKEN,
+    subdomain: process.env.LOGGLY_SUBDOMAIN,
+    tags: process.env.LOGGLY_TAG ? [process.env.LOGGLY_TAG] : [],
+    json:true
+  });
+}
 
 // var log = bunyan.createLogger({name: "client-events"});
 module.exports = function (httpServer) {
