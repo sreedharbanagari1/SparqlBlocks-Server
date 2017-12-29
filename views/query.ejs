@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="logo"></h1>
+
+        <nav>
+            <ul>
+                <li><a href="/demo/#gist:<%=dataID%>">Go back to SparqlBlocks</a></li>
+                <li><a href="/query1?query1=<%=encodeURIComponent(QUERY)%>">Save Query as SPARQL</a></li>
+                <li><a href="/json1?json1=<%=encodeURIComponent(JS)%>">Save Results as JSON</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<h1>Sparql Query  in Textual Form</h1>
+
+<%=QUERY%>
+<p> <h1> Sparql Query Results</h1>
+<%var js = JSON.parse(JS);
+var vars = js.head.vars;
+var bindings = js.results.bindings;%>
+<table border="1">
+    <tr>
+        <%for(i in vars)
+        {%>
+        <th><%=vars[i]%></th><%}%>
+    </tr>
+    <%for(j in bindings) {
+        var binding = bindings[j];%>
+    <tr>
+        <%for(n in binding) {%>
+        <td><%=binding[n].value%></td>
+        <%}%></tr>
+    <%}%>
+</table>
+<p> <h1>Sparql Visual Query & Results</h1>
+  <!-- SVG-Sprite -->
+        <%- SVG %>
+</span></p>
+
+</body>
+</html>
